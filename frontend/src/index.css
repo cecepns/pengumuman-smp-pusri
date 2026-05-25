@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans text-gray-900 antialiased;
+  }
+}
+
+.print-only {
+  display: none;
+}
+
+/* --- Print: dokumen pengumuman kelulusan --- */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm 14mm;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #111 !important;
+    font-size: 11pt;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .print-hide-layout {
+    display: none !important;
+  }
+
+  .print-page-root {
+    min-height: auto !important;
+    background: #fff !important;
+  }
+
+  .print-main {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .print-document {
+    width: 100%;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .print-document-header {
+    text-align: center;
+    margin-bottom: 6mm;
+    padding-bottom: 4mm;
+    border-bottom: 1.5pt solid #1e3a8a;
+  }
+
+  .print-document-header img {
+    height: 22mm;
+    width: auto;
+    margin: 0 auto 3mm;
+    object-fit: contain;
+  }
+
+  .print-document-header h1 {
+    font-size: 13pt;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .print-document-header .print-subtitle {
+    font-size: 9pt;
+    color: #444;
+    margin-top: 2mm;
+  }
+
+  .print-document-header .print-date {
+    font-size: 8.5pt;
+    color: #666;
+    margin-top: 1mm;
+  }
+
+  .print-certificate {
+    border: 1.5pt solid #333 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+    background: #fff !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .print-certificate-banner {
+    padding: 4mm 0 !important;
+    text-align: center;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .print-certificate-banner.lulus {
+    background: #059669 !important;
+    color: #fff !important;
+  }
+
+  .print-certificate-banner.tidak-lulus {
+    background: #d97706 !important;
+    color: #fff !important;
+  }
+
+  .print-certificate-banner span {
+    font-size: 16pt;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+  }
+
+  .print-certificate-banner svg {
+    display: none;
+  }
+
+  .print-certificate-body {
+    padding: 5mm 6mm !important;
+  }
+
+  .print-student-name {
+    text-align: center;
+    margin-bottom: 4mm;
+    break-inside: avoid;
+  }
+
+  .print-student-name .label {
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #666;
+  }
+
+  .print-student-name .value {
+    font-size: 14pt;
+    font-weight: 700;
+    color: #111;
+    margin-top: 1mm;
+  }
+
+  .print-info-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 3mm !important;
+    margin-bottom: 4mm;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .print-info-item {
+    border: 0.75pt solid #ccc !important;
+    border-radius: 0 !important;
+    background: #f9fafb !important;
+    padding: 2.5mm 3mm !important;
+    break-inside: avoid;
+  }
+
+  .print-info-item .label {
+    font-size: 7.5pt;
+    color: #666;
+    display: block;
+  }
+
+  .print-info-item .value {
+    font-size: 10pt;
+    font-weight: 600;
+    color: #111;
+    margin-top: 0.5mm;
+  }
+
+  .print-info-item .value.emerald {
+    color: #047857 !important;
+  }
+
+  .print-info-item .value.amber {
+    color: #b45309 !important;
+  }
+
+  .print-message {
+    border: 0.75pt solid #ccc !important;
+    border-radius: 0 !important;
+    padding: 3mm !important;
+    text-align: center;
+    font-size: 9.5pt;
+    font-weight: 600;
+    margin-bottom: 3mm;
+    break-inside: avoid;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .print-message.lulus {
+    background: #ecfdf5 !important;
+    color: #065f46 !important;
+    border-color: #a7f3d0 !important;
+  }
+
+  .print-message.tidak-lulus {
+    background: #fffbeb !important;
+    color: #92400e !important;
+    border-color: #fde68a !important;
+  }
+
+  .print-keterangan {
+    border: 0.75pt solid #ddd !important;
+    border-radius: 0 !important;
+    padding: 2.5mm 3mm !important;
+    margin-bottom: 3mm;
+    break-inside: avoid;
+  }
+
+  .print-keterangan .label {
+    font-size: 7.5pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #666;
+  }
+
+  .print-keterangan .value {
+    font-size: 9pt;
+    color: #333;
+    margin-top: 1mm;
+  }
+
+  .print-doc-footer {
+    text-align: center;
+    font-size: 7.5pt;
+    color: #888;
+    margin-top: 2mm;
+    padding-top: 2mm;
+    border-top: 0.5pt solid #ddd;
+  }
+}
