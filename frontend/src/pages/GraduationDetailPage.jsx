@@ -12,6 +12,7 @@ import PublicLayout from "@/layouts/PublicLayout";
 import Spinner from "@/components/ui/Spinner";
 import { checkGraduation } from "@/services/studentService";
 import { getSettings } from "@/services/settingsService";
+import { formatDateId } from "@/utils/dateFormat";
 
 export default function GraduationDetailPage() {
   const { type, value, dob } = useParams();
@@ -186,15 +187,7 @@ export default function GraduationDetailPage() {
               <InfoRow label="Kelas" value={result.kelas} />
               <InfoRow
                 label="Tanggal Lahir"
-                value={
-                  result.tanggal_lahir
-                    ? new Date(result.tanggal_lahir).toLocaleDateString("id-ID", {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                      })
-                    : "-"
-                }
+                value={formatDateId(result.tanggal_lahir)}
               />
               <InfoRow
                 label="Status"

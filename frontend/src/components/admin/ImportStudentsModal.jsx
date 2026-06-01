@@ -87,7 +87,9 @@ export default function ImportStudentsModal({ open, onClose, onSuccess }) {
       <div className="space-y-4">
         <p className="text-sm text-gray-600">
           Excel diproses di perangkat Anda. Unduh template, isi data, lalu upload.
-          Kolom wajib: NIS, NISN, Nama, Kelas, Tanggal Lahir (YYYY-MM-DD), Status (lulus / tidak_lulus).
+          Kolom wajib: NIS, NISN (10 digit, awalan 0 tetap), Nama, Kelas, Tanggal
+          Lahir (YYYY-MM-DD), Status (lulus / tidak_lulus). Unduh template terbaru
+          agar format NIS/NISN benar.
         </p>
 
         <button
